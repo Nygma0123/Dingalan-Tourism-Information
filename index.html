@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dingalan Tourism Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+		
+        <h2 onclick="scrollToTop()">Dingalan Tourism</h2>
+
+        <nav>
+            <a href="#destinations">Attractions</a>
+            <a href="#categories">Activities</a>
+            <a href="#trips">Tours</a>
+        </nav>
+		<img src="logo.png" alt="Dingalan Tourism Logo" class="logo">
+		
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Discover the Batanes of the East</h1>
+        <p>Explore the beautiful beaches, mountains, caves, and waterfalls of Dingalan, Aurora.</p>
+
+        <input type="text" id="searchInput"
+               placeholder="Search destinations">
+
+        <button onclick="searchDestinations()">Search</button>
+    </section>
+
+    <!-- CATEGORY BUTTONS -->
+    <section id="categories">
+        <h2>Explore Activities</h2>
+
+        <button onclick="filterCategory('All')">View All</button>
+        <button onclick="filterCategory('Beaches')">Beaches</button>
+        <button onclick="filterCategory('Mountains')">Mountains</button>
+        <button onclick="filterCategory('Caves')">Caves</button>
+        <button onclick="filterCategory('Waterfalls')">Waterfalls</button>
+        <button onclick="filterCategory('Lighthouses')">Lighthouses</button>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <p>Click a destination to learn more.</p>
+
+        <div class="destination-container">
+
+            <div class="destination" data-category="Lighthouses">
+                <img src="https://i.pinimg.com/1200x/ba/fa/7b/bafa7b6084b9fbf898339f1b15f4c730.jpg"
+                     alt="Coastal view">
+
+                <h3>Dingalan Lighthouse</h3>
+                <p>Enjoy the beautiful view of the Pacific Ocean.</p> 
+
+                <button onclick="showDetails('Dingalan Lighthouse',
+                'A popular viewpoint overlooking the Pacific Ocean at Tan-awan Hill.')">
+                    View Details
+                </button>
+				</br>
+				<a href="https://www.w3schools.com/">Learn More</a>
+            </div>
+
+            <div class="destination" data-category="Beaches">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80"
+                     alt="Beach">
+
+                <h3>White Beach</h3>
+                <p>Relax and enjoy the sand and sea.</p>
+
+                <button onclick="showDetails('White Beach',
+                'Enjoy the coastal scenery and relaxing beach atmosphere in Dingalan.')">
+                    View Details
+                </button>
+            </div>
+
+            <div class="destination" data-category="Caves">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80"
+                     alt="Natural landscape">
+
+                <h3>Lamao Caves</h3>
+                <p>Discover interesting coastal rock formations.</p>
+
+                <button onclick="showDetails('Lamao Caves',
+                'Explore the coastal cave area with proper local guidance and suitable weather.')">
+                    View Details
+                </button>
+            </div>
+
+            <div class="destination" data-category="Waterfalls">
+                <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80"
+                     alt="Waterfall">
+
+                <h3>Paltic Falls</h3>
+                <p>Discover a refreshing natural attraction.</p>
+
+                <button onclick="showDetails('Paltic Falls',
+                'Learn about this natural attraction and check local access information before visiting.')">
+                    View Details
+                </button>
+            </div>
+
+            <div class="destination" data-category="Mountains">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                     alt="Mountains and nature">
+
+                <h3>Tan-awan View Deck</h3>
+                <p>Enjoy views of the mountains and coastline.</p>
+
+                <button onclick="showDetails('Tan-awan View Deck',
+                'A viewpoint for enjoying the surrounding hills and coastal scenery.')">
+                    View Details
+                </button>
+            </div>
+
+            <div class="destination" data-category="Beaches">
+                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80"
+                     alt="Ocean">
+
+                <h3>Dingalan Bay</h3>
+                <p>See the beautiful coastal waters of Dingalan.</p>
+
+                <button onclick="showDetails('Dingalan Bay',
+                'Discover the bay and learn about local boat services and coastal activities.')">
+                    View Details
+                </button>
+            </div>
+
+        </div>
+
+        <p id="noResults" style="display:none;">
+            No destinations found.
+        </p>
+    </section>
+
+    <!-- TOUR PACKAGES -->
+    <section id="trips">
+        <h2>Featured Tour Packages</h2>
+
+        <div class="tour">
+            <h3>Lighthouse and Beach Escape</h3>
+            <p>Duration: 1 Day</p>
+            <p>Price: ₱1,499 per person</p>
+            <button onclick="bookTour('Lighthouse and Beach Escape', '₱1,499')">
+                Book Experience
+            </button>
+        </div>
+
+        <div class="tour">
+            <h3>Falls and Caves Expedition</h3>
+            <p>Duration: 2 Days / 1 Night</p>
+            <p>Price: ₱2,899 per person</p>
+            <button onclick="bookTour('Falls and Caves Expedition', '₱2,899')">
+                Book Experience
+            </button>
+        </div>
+
+        <div class="tour">
+            <h3>Summit Sunrise Camp</h3>
+            <p>Duration: Overnight</p>
+            <p>Price: ₱1,999 per person</p>
+            <button onclick="bookTour('Summit Sunrise Camp', '₱1,999')">
+                Book Experience
+            </button>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter">
+        <h2>Join Our Newsletter</h2>
+        <p>Receive travel updates and information.</p>
+
+        <input type="email" id="emailInput"
+               placeholder="Enter your email">
+
+        <button onclick="subscribe()">Join</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Dingalan Tourism Information</p>
+        <p>Aurora, Philippines</p>
+        <p>Copyright 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
