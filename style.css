@@ -14,12 +14,18 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
 }
+header h2 {
+    color: #0d9488;
+    cursor: pointer;
+}
 
 .logo {
     width: 150px;
     height: 150px;
     object-fit: contain;
 	border-radius: 100px;
+	 text-decoration: underline;
+	 color: black;
 }
 
 nav {
@@ -28,17 +34,18 @@ nav {
     gap: 20px;
     margin-left: auto;
     margin-right: 20px;
-	 text-decoration: none;
 }
 
-header h2 {
-    color: #0d9488;
-    cursor: pointer;
+nav a {
+    text-decoration: none; /* alisin underline */
+    color: black; /* purple */
+    font-size: 20px;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #0d9488;
-	 text-decoration: none;
+    color: #0d9488; /* teal kapag hover */
+    text-decoration: none; /* siguraduhing walang underline */
 }
 
 /* BUTTONS */
@@ -116,6 +123,9 @@ section {
 .destination button {
     margin-top: 5px;
 }
+.destination a{
+	 text-decoration: none;
+}
 
 /* TOUR PACKAGES */
 .tour {
@@ -137,32 +147,6 @@ section {
 footer {
     background-color: #0f172a;
     color: white;
-    text-align: center;
+    text-align: left-side;
     padding: 25px;
-}
-
-/* MOBILE SCREEN */
-@media screen and (max-width: 600px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .destination {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .tour {
-        width: auto;
-        max-width: 280px;
-    }
 }
