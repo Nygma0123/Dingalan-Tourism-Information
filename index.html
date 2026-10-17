@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,21 +6,19 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     <header>
 		
         <h2 onclick="scrollToTop()">Dingalan Tourism</h2>
-
         <nav>
             <a href="#destinations">Attractions</a>
             <a href="#categories">Activities</a>
             <a href="#trips">Tours</a>
         </nav>
+		
 		<img src="logo.png" alt="Dingalan Tourism Logo" class="logo">
 		
     </header>
-
     <!-- HERO SECTION -->
     <section class="hero">
         <h1>Discover the Batanes of the East</h1>
@@ -52,84 +49,49 @@
 
         <div class="destination-container">
 
-            <div class="destination" data-category="Lighthouses">
-                <img src="https://i.pinimg.com/1200x/ba/fa/7b/bafa7b6084b9fbf898339f1b15f4c730.jpg"
-                     alt="Coastal view">
-
-                <h3>Dingalan Lighthouse</h3>
-                <p>Enjoy the beautiful view of the Pacific Ocean.</p> 
-
-                <button onclick="showDetails('Dingalan Lighthouse',
-                'A popular viewpoint overlooking the Pacific Ocean at Tan-awan Hill.')">
-                    View Details
-                </button>
-				</br>
-				<a href="https://www.w3schools.com/">Learn More</a>
-            </div>
-
             <div class="destination" data-category="Beaches">
-                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80"
+                <img src="https://i.pinimg.com/736x/47/21/4b/47214b6ffb90e80f96253b5e85389908.jpg"
                      alt="Beach">
 
-                <h3>White Beach</h3>
-                <p>Relax and enjoy the sand and sea.</p>
+                <h3>Dingalan Beach</h3>
+                <p>Enjoy the beautiful beach, fresh air, and relaxing view of nature.</p>
 
                 <button onclick="showDetails('White Beach',
                 'Enjoy the coastal scenery and relaxing beach atmosphere in Dingalan.')">
                     View Details
                 </button>
+				</br>
+				<a href="https://www.aurora.ph/dingalan-lgu-tourism-office/">Learn More</a>
             </div>
 
             <div class="destination" data-category="Caves">
-                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80"
+                <img src="https://i.pinimg.com/736x/9d/6b/99/9d6b99021419d389a26f73c2d7318f0c.jpg"
                      alt="Natural landscape">
 
-                <h3>Lamao Caves</h3>
-                <p>Discover interesting coastal rock formations.</p>
+                <h3>Dingalan Mountains</h3>
+                <p>Discover the mountains and natural views that make Dingalan special.</p>
 
                 <button onclick="showDetails('Lamao Caves',
                 'Explore the coastal cave area with proper local guidance and suitable weather.')">
                     View Details
                 </button>
+				</br>
+				<a href="https://www.aurora.ph/dingalan-lgu-tourism-office/">Learn More</a>
             </div>
 
             <div class="destination" data-category="Waterfalls">
-                <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80"
+                <img src="https://tse4.mm.bing.net/th/id/OIP.hhEjv8zl-O9vqAt3fmoFswHaF7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
                      alt="Waterfall">
 
-                <h3>Paltic Falls</h3>
-                <p>Discover a refreshing natural attraction.</p>
+                <h3>Local Community</h3>
+                <p>Learn about the people, activities, and information around the community.</p>
 
                 <button onclick="showDetails('Paltic Falls',
                 'Learn about this natural attraction and check local access information before visiting.')">
                     View Details
                 </button>
-            </div>
-
-            <div class="destination" data-category="Mountains">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-                     alt="Mountains and nature">
-
-                <h3>Tan-awan View Deck</h3>
-                <p>Enjoy views of the mountains and coastline.</p>
-
-                <button onclick="showDetails('Tan-awan View Deck',
-                'A viewpoint for enjoying the surrounding hills and coastal scenery.')">
-                    View Details
-                </button>
-            </div>
-
-            <div class="destination" data-category="Beaches">
-                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=600&q=80"
-                     alt="Ocean">
-
-                <h3>Dingalan Bay</h3>
-                <p>See the beautiful coastal waters of Dingalan.</p>
-
-                <button onclick="showDetails('Dingalan Bay',
-                'Discover the bay and learn about local boat services and coastal activities.')">
-                    View Details
-                </button>
+				</br>
+				<a href="https://www.aurora.ph/dingalan-lgu-tourism-office/">Learn More</a>
             </div>
 
         </div>
@@ -171,22 +133,50 @@
         </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section id="newsletter">
-        <h2>Join Our Newsletter</h2>
-        <p>Receive travel updates and information.</p>
+     <!-- ABOUT -->
+    <section class="section" id="about">
 
-        <input type="email" id="emailInput"
-               placeholder="Enter your email">
+        <div class="section-title">
+            <div>
+                <h2>About the Website</h2>
+                <p>A simple digital information website for the Dingalan community.</p>
+            </div>
+        </div>
 
-        <button onclick="subscribe()">Join</button>
+        <p style="max-width: 850px; color:#666; line-height:1.8;">
+            The Dingalan Community Information Website is designed to make local
+            information easier to find and understand. It brings useful community
+            information, places, announcements, and local features into one website.
+        </p>
+
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Dingalan Tourism Information</p>
-        <p>Aurora, Philippines</p>
-        <p>Copyright 2026</p>
+     <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div>
+                <h2>Dingalan Community</h2>
+                <p>
+                    Discover. Connect. Learn more about Dingalan.
+                </p>
+            </div>
+
+            
+
+            <div>
+                <h3>Contact</h3>
+                <p>Email: dingalancommunity@email.com</p>
+                <p>Location: Dingalan, Aurora</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Dingalan Community Information Website
+        </div>
+
     </footer>
 
     <script src="script.js"></script>
