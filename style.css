@@ -1,31 +1,47 @@
+/* ==========================================
+   1. GLOBAL & RESET STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
 
-/* BASIC PAGE DESIGN */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
     background-color: #f1f5f9;
     color: #334155;
+    line-height: 1.6;
 }
 
-/* HEADER */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
 header h2 {
     color: #0d9488;
     cursor: pointer;
+    margin: 0;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-	border-radius: 100px;
-	 text-decoration: underline;
-	 color: black;
+    border-radius: 50%;
 }
 
 nav {
@@ -37,46 +53,35 @@ nav {
 }
 
 nav a {
-    text-decoration: none; /* alisin underline */
-    color: black; /* purple */
+    text-decoration: none;
+    color: #000000;
     font-size: 20px;
     font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #0d9488; /* teal kapag hover */
-    text-decoration: none; /* siguraduhing walang underline */
+    color: #0d9488;
+    text-decoration: none;
 }
 
-/* BUTTONS */
+/* ==========================================
+   3. BUTTONS & INPUTS
+   ========================================== */
 button {
     background-color: #0d9488;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     margin: 5px;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
     background-color: #0f766e;
-}
-
-/* HERO SECTION */
-.hero {
-    background-image: url('banner.jpg');
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 36px;
-}
-
-.hero p {
-    font-size: 18px;
 }
 
 input {
@@ -84,29 +89,51 @@ input {
     margin: 5px;
     border: 1px solid #cbd5e1;
     border-radius: 5px;
+    outline: none;
 }
 
-/* GENERAL SECTIONS */
-section {
-    padding: 40px 20px;
-    text-align: center;
+input:focus {
+    border-color: #0d9488;
 }
 
-/* DESTINATION CARDS */
+/* ==========================================
+   4. HERO SECTION
+   ========================================== */
+.hero {
+    background-image: url('bgi.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: right;
+    padding: 200px 100px;
+}
+
+/* ==========================================
+   5. DESTINATION CARDS
+   ========================================== */
 .destination-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
+    padding: 20px;
 }
 
 .destination {
-    background-color: white;
+    background-color: #ffffff;
     width: 280px;
-    padding-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px #cbd5e1;
+    box-shadow: 0 4px 12px rgba(203, 213, 225, 0.6);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(148, 163, 184, 0.8);
 }
 
 .destination img {
@@ -115,38 +142,65 @@ section {
     object-fit: cover;
 }
 
-.destination h3,
+.destination h3 {
+    margin: 16px 16px 8px 16px;
+    font-size: 1.25rem;
+    color: #1e293b;
+}
+
 .destination p {
-    margin: 15px;
+    margin: 0 16px 16px 16px;
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    flex-grow: 1; /* Sinisiguro nitong pantay-pantay ang taas ng mga card */
 }
 
 .destination button {
-    margin-top: 5px;
-}
-.destination a{
-	 text-decoration: none;
+    margin: 0 16px 16px 16px;
+    padding: 10px 16px;
+    background-color: #0ea5e9;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
 }
 
-/* TOUR PACKAGES */
+.destination button:hover {
+    background-color: #0284c7;
+}
+
+.destination a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   6. TOUR PACKAGES
+   ========================================== */
 .tour {
     display: inline-block;
-    background-color: white;
+    background-color: #ffffff;
     width: 280px;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 8px #cbd5e1;
+    vertical-align: top;
 }
 
-/* NEWSLETTER */
+/* ==========================================
+   7. NEWSLETTER & FOOTER
+   ========================================== */
 #newsletter {
     background-color: #dff7f3;
+    text-align: center;
 }
 
-/* FOOTER */
 footer {
     background-color: #0f172a;
-    color: white;
-    text-align: left-side;
+    color: #ffffff;
+    text-align: left;
     padding: 25px;
 }
