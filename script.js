@@ -1,96 +1,104 @@
 
-// SHOW DESTINATION DETAILS
+/* SHOW DESTINATION DETAILS */
 function showDetails(title, message) {
     alert(title + "\n\n" + message);
 }
 
-// SEARCH DESTINATIONS
+/* SEARCH DESTINATIONS */
 function searchDestinations() {
-    var input = document.getElementById("searchInput");
-    var searchText = input.value.toLowerCase().trim();
-
+    var searchInput = document.getElementById("searchInput");
+    var searchText = searchInput.value.toLowerCase().trim();
     var cards = document.getElementsByClassName("destination");
     var count = 0;
 
     for (var i = 0; i < cards.length; i++) {
         var name = cards[i].getElementsByTagName("h3")[0]
-            .innerText.toLowerCase();
+            .textContent.toLowerCase();
 
         var description = cards[i].getElementsByTagName("p")[0]
-            .innerText.toLowerCase();
+            .textContent.toLowerCase();
 
-        if (name.indexOf(searchText) !== -1 ||
-            description.indexOf(searchText) !== -1) {
+        var category = cards[i].getAttribute("data-category")
+            .toLowerCase();
 
-            cards[i].style.display = "block";
+        if (
+            name.indexOf(searchText) !== -1 ||
+            description.indexOf(searchText) !== -1 ||
+            category.indexOf(searchText) !== -1
+        ) {
+            cards[i].style.display = "flex";
             count++;
-
         } else {
             cards[i].style.display = "none";
         }
     }
 
-    document.getElementById("noResults").style.display =
-        count === 0 ? "block" : "none";
+    document.getElementById("noResults").hidden = count !== 0;
 
-    document.getElementById("destinations").scrollIntoView();
+    document.getElementById("destinations").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
-// FILTER BY CATEGORY
+/* FILTER DESTINATIONS BY CATEGORY */
 function filterCategory(category) {
     var cards = document.getElementsByClassName("destination");
     var count = 0;
 
-    // Clear the search box
     document.getElementById("searchInput").value = "";
 
     for (var i = 0; i < cards.length; i++) {
         var cardCategory = cards[i].getAttribute("data-category");
 
         if (category === "All" || cardCategory === category) {
-            cards[i].style.display = "block";
+            cards[i].style.display = "flex";
             count++;
         } else {
             cards[i].style.display = "none";
         }
     }
 
-    document.getElementById("noResults").style.display =
-        count === 0 ? "block" : "none";
+    document.getElementById("noResults").hidden = count !== 0;
 
-    document.getElementById("destinations").scrollIntoView();
+    /* Highlight the selected category */
+    var buttons = document.querySelectorAll(".category-buttons button");
+
+    for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove("active");
+    }
+
+    for (var k = 0; k < buttons.length; k++) {
+        if (
+            buttons[k].textContent.trim() === category ||
+            (category === "All" &&
+             buttons[k].textContent.trim() === "View All")
+        ) {
+            buttons[k].classList.add("active");
+        }
+    }
+
+    document.getElementById("destinations").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
-// BOOK A TOUR
+/* TOUR INQUIRY */
 function bookTour(name, price) {
-    alert("Booking Inquiry\n\nTour: " + name +
-          "\nPrice: " + price +
-          "\n\nThank you for your interest!");
+    alert(
+        "Tour Inquiry\n\n" +
+        "Tour: " + name +
+        "\nPrice: " + price +
+        " per person\n\n" +
+        "Thank you for your interest! " +
+        "Please contact the local tour provider " +
+        "to confirm availability and booking details."
+    );
 }
 
-// NEWSLETTER SUBSCRIPTION
-function subscribe() {
-    var email = document.getElementById("emailInput").value.trim();
-
-    if (email === "") {
-        alert("Please enter your email address.");
-    } else if (!email.includes("@") || !email.includes(".")) {
-        alert("Please enter a valid email address.");
-    } else {
-        alert("Thank you for subscribing!\nEmail: " + email);
-
-        document.getElementById("emailInput").value = "";
-    }
-}
-
-// RETURN TO TOP
+/* RETURN TO TOP */
 function scrollToTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
-
-// ALLOW SEARCH USING THE ENTER KEY
-document.getElementById("searchInput").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        searchDestinations();
-    }
-});
