@@ -65,7 +65,7 @@ button:hover {
 
 /* HERO SECTION */
 .hero {
-    background-color: #164e63;
+    background-image: url('banner.jpg');
     color: white;
     text-align: center;
     padding: 80px 20px;
